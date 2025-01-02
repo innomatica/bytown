@@ -629,5 +629,25 @@ export const radioStations: RadioStation[] = [
     "lastcheckok": 1,
     "lastchecktime_iso8601": "2024-12-31T23:08:40Z",
     "lastcheckoktime_iso8601": "2024-12-31T23:08:40Z"
-  }
+  },
+  {
+    "stationuuid": "964308ef-0601-11e8-ae97-52543be04c81",
+    "name": "CHLX \"WOW 97.1 Gatineau, QC (MP3)",
+	"short_name": "WOW 97.1",
+    "url": "http://icecast-chlx.rncm.ca/chlx.mp3",
+    "url_resolved": "http://icecast-chlx.rncm.ca/chlx.mp3",
+    "homepage": "https://wowfm.ca/",
+    "favicon": "https://wowfm.ca/favicon.ico",
+    "tags": "gatineau,ottawa,pop,top 40",
+    "country": "Canada",
+    "countrycode": "CA",
+    "language": "french",
+    "languagecodes": "",
+    "codec": "MP3",
+    "bitrate": 128,
+    "hls": 0,
+    "lastcheckok": 1,
+    "lastchecktime_iso8601": "2025-01-02T13:22:33Z",
+    "lastcheckoktime_iso8601": "2025-01-02T13:22:33Z"
+  },
 ]
