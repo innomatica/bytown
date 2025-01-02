@@ -1,0 +1,40 @@
+[
+  {
+    "stationuuid": "265a40b6-8e96-4102-8ea7-26d162f970ca",
+    "name": "Radio-Classique",
+    "url": "https://www.radioking.com/play/radio-classique/271810",
+    "url_resolved": "https://listen.radioking.com/radio/228241/stream/271810",
+    "homepage": "https://www.radioclassique.ca/",
+    "favicon": "https://www.radioclassique.ca/upload/5d7f91e07dcae6.18591349.ico",
+    "tags": "classical,film music,opera",
+    "country": "Canada",
+    "countrycode": "CA",
+    "language": "french",
+    "languagecodes": "",
+    "codec": "MP3",
+    "bitrate": 320,
+    "hls": 0,
+    "lastcheckok": 1,
+    "lastchecktime_iso8601": "2025-01-01T08:28:59Z",
+    "lastcheckoktime_iso8601": "2025-01-01T08:28:59Z"
+  },
+  {
+    "stationuuid": "28be7f1d-9c46-4072-8a09-5f53326d7519",
+    "name": "CFPT 106.5 \"Elmnt FM\" Toronto, ON",
+    "url": "https://ice10.securenetsystems.net/CFPT",
+    "url_resolved": "https://ice10.securenetsystems.net/CFPT",
+    "homepage": "https://toronto.elmntfm.ca/",
+    "favicon": "https://toronto.elmntfm.ca/wp-content/uploads/2021/02/Vertical_1065elmnt_logo_RGB_colour-white.png",
+    "tags": "hip hop,indigenous,r&b,talk",
+    "country": "Canada",
+    "countrycode": "CA",
+    "language": "",
+    "languagecodes": "",
+    "codec": "AAC+",
+    "bitrate": 32,
+    "hls": 0,
+    "lastcheckok": 1,
+    "lastchecktime_iso8601": "2024-12-31T23:08:40Z",
+    "lastcheckoktime_iso8601": "2024-12-31T23:08:40Z"
+  }
+]
