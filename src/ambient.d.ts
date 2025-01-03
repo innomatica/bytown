@@ -25,6 +25,7 @@ type Newsfeed = {
   url: string;
   feed: string;
   logo: string;
+  items?: NewsItem[];
 };
 
 type NewsItem = {
@@ -32,7 +33,7 @@ type NewsItem = {
   link: string | undefined;
   description: string | undefined;
   image: string | undefined | null;
-  logo: string | undefined;
+  // logo: string | undefined;
   pubDate: Date | undefined;
 };
 

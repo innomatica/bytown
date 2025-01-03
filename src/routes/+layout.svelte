@@ -101,8 +101,8 @@
 <audio crossorigin="anonymous" bind:this={audioElement}></audio>
 
 <!-- button bar -->
-<div class=" flex flex-col sm:h-screen sm:flex-row">
-	<div class="fixed top-0">
+<div class="flex flex-col sm:h-screen sm:flex-row">
+	<div class="fixed top-0 z-50 opacity-85">
 		<div
 			class="flex w-screen flex-row items-center justify-around bg-base-300 py-5 sm:h-screen sm:w-fit sm:flex-col sm:justify-normal sm:gap-8 sm:px-4"
 		>

@@ -1,9 +1,9 @@
-export const defaultNewsfeeds: Newsfeed[] = [
+export const newsfeeds: Newsfeed[] = [
   {
-    title: 'CTV News Ottawa',
-    url: 'https://ottawa.ctvnews.ca/',
-    feed: 'https://ottawa.ctvnews.ca/rss/ctv-news-ottawa-1.1245493/',
-    logo: 'https://www.ctvnews.ca/content/dam/ctvnews/en/images/logos/CTVNews_horizontal_logo_f.svg'
+    title: 'Capital Current',
+    url: 'https://capitalcurrent.ca/',
+    feed: 'https://capitalcurrent.ca/feed/',
+    logo: 'https://capitalcurrent.ca/wp-content/uploads/2018/07/cropped-CC_Icon_web-32x32.jpg',
   },
   {
     title: 'CBC Ottawa',
@@ -12,22 +12,10 @@ export const defaultNewsfeeds: Newsfeed[] = [
     logo: 'https://www.cbc.ca/favicon.ico'
   },
   {
-    title: 'Ottawa Citizen',
-    url: 'https://ottawacitizen.com/',
-    feed: 'https://ottawacitizen.com/feed',
-    logo: 'https://dcs-static.gprod.postmedia.digital/17.6.4/websites/images/broadsheets/favicon-oc.ico'
-  },
-  {
-    title: 'Capital Current',
-    url: 'https://capitalcurrent.ca/',
-    feed: 'https://capitalcurrent.ca/feed/',
-    logo: 'https://capitalcurrent.ca/wp-content/uploads/2018/07/cropped-CC_Icon_web-32x32.jpg',
-  },
-  {
-    title: 'Ottawa Chinese',
-    url: 'https://canadachinanews.com/',
-    feed: 'https://canadachinanews.com/feed/',
-    logo: 'https://canadachinanews.com/wp-content/uploads/2020/10/favicon-CCN-hua.jpg'
+    title: 'CTV News Ottawa',
+    url: 'https://ottawa.ctvnews.ca/',
+    feed: 'https://ottawa.ctvnews.ca/rss/ctv-news-ottawa-1.1245493/',
+    logo: 'https://www.ctvnews.ca/content/dam/ctvnews/en/images/logos/CTVNews_horizontal_logo_f.svg'
   },
   {
     title: 'Hometown News',
@@ -41,28 +29,42 @@ export const defaultNewsfeeds: Newsfeed[] = [
     feed: 'https://manorparkchronicle.com/feed/',
     logo: 'https://manorparkchronicle.com/wp-content/themes/manorpark/favicon-32x32.png'
   },
+  // frequently breaks
+  // {
+  //   title: 'New Edinburgh News',
+  //   url: 'https://www.newedinburgh.ca/',
+  //   feed: 'https://www.newedinburgh.ca/feed/',
+  //   logo: ''
+  // },
   {
-    title: 'The Millstone',
-    url: 'https://millstonenews.com/',
-    feed: 'https://millstonenews.com/feed/',
-    logo: 'https://millstonenews.com/wp-content/uploads/2018/01/favicon-calendar-o.png'
-  },
-  {
-    title: 'New Edinburgh',
-    url: 'https://www.newedinburgh.ca/',
-    feed: 'https://www.newedinburgh.ca/feed/',
-    logo: ''
-  },
-  {
-    title: 'OSCA',
+    title: 'Old Ottawa South Community',
     url: 'https://oldottawasouth.ca/',
     feed: 'https://oldottawasouth.ca/feed/',
     logo: 'https://oldottawasouth.ca/wp-content/uploads/2023/02/cropped-OSCA-square-site-icon-32x32.png'
+  },
+  // useless title
+  // {
+  //   title: 'Ottawa Chinese News',
+  //   url: 'https://canadachinanews.com/',
+  //   feed: 'https://canadachinanews.com/feed/',
+  //   logo: 'https://canadachinanews.com/wp-content/uploads/2020/10/favicon-CCN-hua.jpg'
+  // },
+  {
+    title: 'Ottawa Citizen',
+    url: 'https://ottawacitizen.com/',
+    feed: 'https://ottawacitizen.com/feed',
+    logo: 'https://dcs-static.gprod.postmedia.digital/17.6.4/websites/images/broadsheets/favicon-oc.ico'
   },
   {
     title: 'Stittsville Central',
     url: 'https://stittsvillecentral.ca/',
     feed: 'https://stittsvillecentral.ca/feed/',
     logo: 'https://stittsvillecentral.ca/favicon.ico',
-  }
+  },
+  {
+    title: 'The Millstone',
+    url: 'https://millstonenews.com/',
+    feed: 'https://millstonenews.com/feed/',
+    logo: 'https://millstonenews.com/wp-content/uploads/2018/01/favicon-calendar-o.png'
+  },
 ];

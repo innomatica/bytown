@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 import { defaultSettings } from '$lib/constants/defaults';
-import { loadSettings, saveSettings } from '$lib/database/indexed_db';
+import { loadSettings, saveSettings } from '$lib/services/indexed_db';
 
 //
 // settings
