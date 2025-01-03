@@ -97,15 +97,18 @@ export const defaultNewsfeeds: Newsfeed[] = [
 	{
 		title: 'CTV News Ottawa',
 		url: 'https://ottawa.ctvnews.ca/rss/ctv-news-ottawa-1.1245493',
+		feed: '',
 		logo: 'https://www.ctvnews.ca/content/dam/ctvnews/en/images/logos/CTVNews_horizontal_logo_f.svg'
 	},
 	{
 		title: 'CBC Ottawa',
+		feed: '',
 		url: 'https://www.cbc.ca/cmlink/rss-canada-ottawa',
 		logo: ''
 	},
 	{
 		title: 'Ottawa Citizen',
+		feed: '',
 		url: 'https://ottawacitizen.com/feed',
 		logo: ''
 	}

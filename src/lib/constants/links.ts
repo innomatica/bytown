@@ -1,5 +1,12 @@
 
 export const defaultLinks: Record<string, Link[]> = {
+  'Info': [
+    {
+      title: 'Ottawa Start',
+      url: 'https://ottawastart.com/',
+      logo: 'https://ottawastart.com/favicon-32x32.png'
+    }
+  ],
   'Event Calendar': [
     {
       title: 'Ottawa Festivals: Calendar',

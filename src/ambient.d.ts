@@ -23,6 +23,7 @@ type RadioStation = {
 type Newsfeed = {
   title: string;
   url: string;
+  feed: string;
   logo: string;
 };
 
