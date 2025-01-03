@@ -41,12 +41,12 @@ def stations_by_geo():
 
 
 
-def stations_by_name():
+def stations_by_name(name:str):
     # Name includes ottawa
-    url = api_ep + '/search?name=ottawa'
+    url = api_ep + f'/search?name={name}'
     # exclude broken data
     url = url + '&hidebroken=true'
-    download_data(url, 'ottawa.json')
+    download_data(url, f'{name}.json')
 
 
 def stations_by_uuid():
@@ -72,6 +72,6 @@ def download_data(url:str, fname:str = 'output.json'):
 
 
 if __name__ == '__main__':
-    stations_by_geo()
-    stations_by_name()
-    stations_by_uuid()
+    #stations_by_geo()
+    stations_by_name('gatineau')
+    #stations_by_uuid()
