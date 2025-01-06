@@ -72,89 +72,68 @@ type Link = {
   logo: string;
 };
 
-type WeatherServer = {
-  url: string;
-  logo: string;
-};
-
-type WeatherEvent = {
-  type: string | null;
-  priority: string | null;
-  description: string | null;
-};
-
-type Wind = {
-  rank?: string | undefined;
-  speed: number;
-  gust: number;
-  direction: string | undefined;
-  bearing?: number;
-};
-
 type CurrentCondition = {
-  station: string | undefined;
-  dateTime: Date;
-  condition: string | undefined;
-  iconCode: string | undefined;
-  temperature: number;
-  dewpoint: number;
-  humidex: number;
-  pressure: number;
-  visibility: number;
-  relativeHumidity: number;
-  wind: Wind;
-};
-
-type DailyForecast = {
-  period: string | undefined;
-  summary: string | undefined;
-  cloud: string | undefined;
-  abbr: {
-    iconCode: string | undefined;
-    pop: number;
-    summary: string | undefined;
-  };
-  temperatures: {
-    summary: string | undefined;
-    temparature: Array<number>;
-  };
-  winds: {
-    summary: string | undefined;
-    items: Array<Wind>;
-  };
-  relativeHumidity: number;
-  humidex: number;
-};
+  apparentTemperature: number,
+  isDay: number,
+  precipitation: number,
+  rain: number,
+  relativeHumidity2m: number,
+  showers: number,
+  snowfall: number,
+  surfacePressure: number,
+  temperature2m: number,
+  time: Date;
+  weatherCode: number,
+  windDirection10m: number,
+  windGusts10m: number,
+  windSpeed10m: number,
+}
 
 type HourlyForecast = {
-  dateTime: Date;
-  condition: string | undefined;
-  iconCode: string | undefined;
-  temperature: number;
-  lop: number;
-  humidex: number;
-  wind: Wind;
-};
+  apparentTemperature: Record<number, number>;
+  dewPoint2m: Record<number, number>;
+  isDay: Record<number, number>;
+  precipitation: Record<number, number>;
+  precipitationProbability: Record<number, number>;
+  rain: Record<number, number>;
+  relativeHumidity2m: Record<number, number>;
+  showers: Record<number, number>;
+  snowDepth: Record<number, number>;
+  snowfall: Record<number, number>;
+  surfacePressure: Record<number, number>;
+  temperature2m: Record<number, number>;
+  time: Date[];
+  uvIndex: Record<number, number>;
+  weatherCode: Record<number, number>;
+  windDirection10m: Record<number, number>;
+  windGusts10m: Record<number, number>;
+  windSpeed10m: Record<number, number>;
+}
 
-type Weather = {
-  dateTime: Date;
-  region: string | undefined;
-  warnings: {
-    url: string | null | undefined;
-    events: Array<WeatherEvent>;
-  };
+type DailyForecast = {
+  apparentTemperatureMax: Record<number, number>;
+  apparentTemperatureMin: Record<number, number>;
+  precipitationHours: Record<number, number>;
+  precipitationProbabilityMax: Record<number, number>;
+  precipitationSum: Record<number, number>;
+  rainSum: Record<number, number>;
+  showersSum: Record<number, number>;
+  snowfallSum: Record<number, number>;
+  sunrise: Record<number, number> | null;
+  sunset: Record<number, number> | null;
+  temperature2mMax: Record<number, number>;
+  temperature2mMin: Record<number, number>;
+  time: Date[];
+  uvIndexClearSkyMax: Record<number, number>;
+  uvIndexMax: Record<number, number>;
+  weatherCode: Record<number, number>;
+  windDirection10mDominant: Record<number, number>;
+  windGusts10mMax: Record<number, number>;
+  windSpeed10mMax: Record<number, number>;
+}
+type WeatherData = {
   current: CurrentCondition;
-  daily: {
-    dateTime: Date;
-    regionalNormals: string | undefined;
-    forecasts: Array<DailyForecast>;
-  };
-  hourly: {
-    dateTime: Date;
-    forecasts: Array<HourlyForecast>;
-  };
-  riseSet: {
-    sunrise: Date;
-    sunset: Date;
-  };
-};
+  hourly: HourlyForecast;
+  daily: DailyForecast;
+}
+

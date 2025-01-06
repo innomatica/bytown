@@ -2,6 +2,7 @@
 	import { newsfeeds } from '$lib/constants/newsfeeds';
 
 	const myNewsfeeds: Newsfeed[] = $state(newsfeeds);
+	const contentStyle = '<style> .noimage > img { display: none;} </style>';
 
 	async function getFeed(event: Event, newsfeed: Newsfeed) {
 		const checked = (event.target as HTMLInputElement).checked;
@@ -40,13 +41,20 @@
 	{#each myNewsfeeds as newsfeed}
 		<div class="collapse bg-base-200">
 			<input type="radio" name="my-accordiion-1" onchange={(e) => getFeed(e, newsfeed)} />
-			<div class="collapse-title text-xl font-medium">{newsfeed.title}</div>
+			<div class="collapse-title flex items-center">
+				<div class="mr-2 h-6 w-6">
+					<img class=" object-fit rounded-sm" src={newsfeed.logo} alt={newsfeed.title} />
+				</div>
+				<div class="line-clamp-1 text-lg font-medium sm:text-xl">{newsfeed.title}</div>
+			</div>
 			<div class="collapse-content flex flex-col gap-4">
 				{#if newsfeed.items}
 					{#each newsfeed.items as item}
 						<a href={item.link} class="flex flex-col" target="_blank">
 							<div class="mb-1 line-clamp-2 font-semibold text-primary">{item.title}</div>
-							<div class="line-clamp-3 font-light">{@html item.description}</div>
+							<div class="noimage line-clamp-3 font-light">
+								{@html item.description + contentStyle}
+							</div>
 						</a>
 					{/each}
 				{:else}

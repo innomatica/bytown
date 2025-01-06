@@ -15,13 +15,13 @@ export const newsfeeds: Newsfeed[] = [
     title: 'CTV News Ottawa',
     url: 'https://ottawa.ctvnews.ca/',
     feed: 'https://ottawa.ctvnews.ca/rss/ctv-news-ottawa-1.1245493/',
-    logo: 'https://www.ctvnews.ca/content/dam/ctvnews/en/images/logos/CTVNews_horizontal_logo_f.svg'
+    logo: 'https://www.ctvnews.ca/content/dam/ctvnews/newicons/favicon/favicon.ico'
   },
   {
     title: 'Hometown News',
     url: 'https://www.hometownnews.ca/',
     feed: 'https://www.hometownnews.ca/feed/',
-    logo: ''
+    logo: 'https://www.hometownnews.ca/wp-includes/images/w-logo-blue-white-bg.png'
   },
   {
     title: 'Manor Park Chronicle',
