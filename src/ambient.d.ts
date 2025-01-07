@@ -60,7 +60,7 @@ type Timezone = {
   title: string;
 };
 
-type GisElement = {
+type GisLayer = {
   name: string;
   url: string;
   minZoom?: number;

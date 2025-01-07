@@ -11,11 +11,20 @@
 	};
 	let { data }: { data: MyProp } = $props();
 
-	let weather: WeatherData | undefined = $state();
 	const now = new Date();
 	const oneday = 24 * 60 * 60 * 1000;
-	const oneweek = 7 * 24 * 60 * 60 * 1000;
+	// const oneweek = 7 * 24 * 60 * 60 * 1000;
 	const tendays = 10 * 24 * 60 * 60 * 1000;
+
+	let weather: WeatherData | undefined = $state();
+	// svelte-ignore non_reactive_update
+	let hourlySlider: HTMLElement | undefined = $state();
+	// svelte-ignore non_reactive_update
+	let dailySlider: HTMLElement | undefined = $state();
+
+	let isDown = false;
+	let startX: number;
+	let scrollLeft: number;
 
 	onMount(() => {
 		const dateFormat = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)Z$/;
@@ -26,8 +35,50 @@
 			return value;
 		};
 		weather = JSON.parse(data.weather, dateTimeReviver);
-		console.log(weather);
+		// console.log(weather);
 	});
+
+	$effect(() => {
+		if (hourlySlider) {
+			enableSlider(hourlySlider);
+		}
+		if (dailySlider) {
+			enableSlider(dailySlider);
+		}
+	});
+
+	function enableSlider(slider: HTMLElement) {
+		// console.log('enableSlider:', slider);
+		// https://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript
+		if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+			console.log('touch device detected');
+			return;
+		}
+		// https://stackoverflow.com/questions/28576636/mouse-click-and-drag-instead-of-horizontal-scroll-bar-to-view-full-content-of-c
+		// console.log('slider actions activated for non-touch device');
+		slider.addEventListener('mousedown', (e) => {
+			isDown = true;
+			slider.classList.add('active');
+			startX = e.pageX - slider.offsetLeft;
+			scrollLeft = slider.scrollLeft;
+		});
+		slider.addEventListener('mouseleave', () => {
+			isDown = false;
+			slider.classList.remove('active');
+		});
+		slider.addEventListener('mouseup', () => {
+			isDown = false;
+			slider.classList.remove('active');
+		});
+		slider.addEventListener('mousemove', (e) => {
+			if (!isDown) return;
+			e.preventDefault();
+			const x = e.pageX - slider.offsetLeft;
+			const walk = (x - startX) * 1; //scroll speed
+			slider.scrollLeft = scrollLeft - walk;
+			// console.log(walk);
+		});
+	}
 </script>
 
 {#if weather}
@@ -36,11 +87,11 @@
       current condition 
     -->
 		<div class="items.center flex flex-col items-center">
-			<div class="text-lg font-semibold">
+			<div class="text-xl font-semibold">
 				<!-- weather description -->
 				{wmo(weather.current.weatherCode).text}
 			</div>
-			<div class="flex items-center">
+			<div class="flex items-center gap-4">
 				<!-- current temperature -->
 				<div class="text-[5rem] font-extrabold">
 					{Math.round(weather.current.temperature2m)}
@@ -68,11 +119,14 @@
     -->
 		<div class="flex flex-col items-center rounded-box bg-neutral p-4">
 			<!-- <div class="mb-4 font-semibold">Hourly</div> -->
-			<div class="carousel carousel-center max-w-xs space-x-4 sm:max-w-sm md:max-w-md lg:max-w-lg">
+			<div
+				class="carousel carousel-center max-w-xs space-x-4 sm:max-w-sm md:max-w-md lg:max-w-lg"
+				bind:this={hourlySlider}
+			>
 				{#each weather.hourly.time as time, index}
 					<!-- show only next 24 hours -->
 					{#if time >= now && time.getTime() < now.getTime() + oneday}
-						<div class="carousel-item flex flex-col items-center">
+						<div class="carousel-item flex cursor-pointer flex-col items-center">
 							<!-- hour -->
 							<div class="my-4 font-semibold">
 								{time.toLocaleTimeString('en-CA', {
@@ -108,7 +162,10 @@
     -->
 		<div class="flex flex-col items-center rounded-box bg-neutral p-4">
 			<!-- <div class="mb-4 font-semibold">Daily</div> -->
-			<div class="carousel carousel-center max-w-xs space-x-4 sm:max-w-sm md:max-w-md lg:max-w-lg">
+			<div
+				class="carousel carousel-center max-w-xs cursor-pointer space-x-4 sm:max-w-sm md:max-w-md lg:max-w-lg"
+				bind:this={dailySlider}
+			>
 				{#each weather.daily.time as time, index}
 					<!-- show next 10 days -->
 					{#if time >= now && time.getTime() < now.getTime() + tendays}

@@ -1,8 +1,10 @@
 //
-// Initial Location
+// Default Map Setteings
 //
 const latLngImpactHubOttawa = [45.4208, -75.6967];
 export const defaultLocation = latLngImpactHubOttawa;
+export const defaultZoom = 15;
+
 
 //
 // Default Settings

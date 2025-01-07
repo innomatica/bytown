@@ -32,7 +32,7 @@
 			<!-- icon -->
 			<div class=" p-2">
 				<img
-					class="h-[4rem] w-[4rem] rounded-[1.5rem] bg-white/50 object-fill sm:h-[7rem] sm:w-[8rem]"
+					class="object-fit h-[4rem] w-[4rem] rounded-[0.5rem] bg-white/80 sm:h-[7rem] sm:w-[8rem]"
 					src={station.favicon}
 					alt={station.name}
 					loading="lazy"

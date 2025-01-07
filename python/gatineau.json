@@ -15,8 +15,8 @@
     "bitrate": 48,
     "hls": 0,
     "lastcheckok": 1,
-    "lastchecktime_iso8601": "2025-01-02T06:33:21Z",
-    "lastcheckoktime_iso8601": "2025-01-02T06:33:21Z"
+    "lastchecktime_iso8601": "2025-01-07T09:35:28Z",
+    "lastcheckoktime_iso8601": "2025-01-07T09:35:28Z"
   },
   {
     "stationuuid": "964297a9-0601-11e8-ae97-52543be04c81",
@@ -34,8 +34,8 @@
     "bitrate": 48,
     "hls": 0,
     "lastcheckok": 1,
-    "lastchecktime_iso8601": "2025-01-02T18:49:06Z",
-    "lastcheckoktime_iso8601": "2025-01-02T18:49:06Z"
+    "lastchecktime_iso8601": "2025-01-06T19:20:51Z",
+    "lastcheckoktime_iso8601": "2025-01-06T19:20:51Z"
   },
   {
     "stationuuid": "964308ef-0601-11e8-ae97-52543be04c81",
@@ -53,14 +53,14 @@
     "bitrate": 128,
     "hls": 0,
     "lastcheckok": 1,
-    "lastchecktime_iso8601": "2025-01-02T13:22:33Z",
-    "lastcheckoktime_iso8601": "2025-01-02T13:22:33Z"
+    "lastchecktime_iso8601": "2025-01-07T11:17:36Z",
+    "lastcheckoktime_iso8601": "2025-01-07T11:17:36Z"
   },
   {
     "stationuuid": "b8ef0f44-0815-4ab2-a5e6-e37630e9037d",
     "name": "CKOF \"FM 104.7 Outaouais\" Gatineau, QC ",
     "url": "https://playerservices.streamtheworld.com/pls/CKOFFMAAC.pls",
-    "url_resolved": "https://18683.live.streamtheworld.com/CKOFFMAAC_SC",
+    "url_resolved": "https://26273.live.streamtheworld.com/CKOFFMAAC_SC",
     "homepage": "https://www.fm1047.ca/",
     "favicon": "https://cdn.cogecolive.com/websites-public/logo_1047_2021_color_default.svg",
     "tags": "actualit\u00e9s,news",
@@ -72,8 +72,8 @@
     "bitrate": 56,
     "hls": 0,
     "lastcheckok": 1,
-    "lastchecktime_iso8601": "2025-01-02T13:52:59Z",
-    "lastcheckoktime_iso8601": "2025-01-02T13:52:59Z"
+    "lastchecktime_iso8601": "2025-01-06T22:39:45Z",
+    "lastcheckoktime_iso8601": "2025-01-06T22:39:45Z"
   },
   {
     "stationuuid": "1acf4213-8c02-41d8-8e37-2721b1a88376",
@@ -91,7 +91,7 @@
     "bitrate": 48,
     "hls": 1,
     "lastcheckok": 1,
-    "lastchecktime_iso8601": "2025-01-02T15:59:48Z",
-    "lastcheckoktime_iso8601": "2025-01-02T15:59:48Z"
+    "lastchecktime_iso8601": "2025-01-07T04:17:15Z",
+    "lastcheckoktime_iso8601": "2025-01-07T04:17:15Z"
   }
 ]

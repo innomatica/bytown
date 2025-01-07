@@ -1,5 +1,5 @@
 
-export const gisOttawa: GisElement[] = [
+export const gisOttawa: GisLayer[] = [
   {
     name: 'art and culture',
     url: 'https://maps.ottawa.ca/arcgis/rest/services/City_Facilities/MapServer/0',

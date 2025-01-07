@@ -1,6 +1,6 @@
 
 export const defaultLinks: Record<string, Link[]> = {
-  'Info': [
+  'Blog / Directory': [
     {
       title: 'Ottawa Start',
       url: 'https://ottawastart.com/',
@@ -36,7 +36,7 @@ export const defaultLinks: Record<string, Link[]> = {
       logo: 'https://www.todocanada.ca/wp-content/uploads/cropped-todocanada-icon-250x165.png'
     },
     {
-      title: 'Ottawa Road Trip',
+      title: 'Ottawa Road Trips',
       url: 'https://ottawaroadtrips.com/',
       logo: 'https://ottawaroadtrips.com/wp-content/uploads/2020/01/ofavicon1.png'
     }

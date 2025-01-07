@@ -73,5 +73,6 @@ def download_data(url:str, fname:str = 'output.json'):
 
 if __name__ == '__main__':
     #stations_by_geo()
-    stations_by_name('gatineau')
+    #stations_by_name('gatineau')
+    stations_by_name('radio+canada')
     #stations_by_uuid()
