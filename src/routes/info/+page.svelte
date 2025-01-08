@@ -32,7 +32,7 @@
 			</ul>
 		{/each}
 	</div>
-	<button class="absolute right-4 top-2" on:click={showQrCode}>
+	<button class="absolute right-4 top-2" onclick={showQrCode}>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 448 512"

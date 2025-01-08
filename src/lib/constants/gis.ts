@@ -1,3 +1,8 @@
+type GisLayer = {
+  name: string;
+  url: string;
+  minZoom?: number;
+};
 
 export const gisOttawa: GisLayer[] = [
   {

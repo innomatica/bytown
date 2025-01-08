@@ -18,7 +18,7 @@
 			// select news items
 			const items = doc.querySelectorAll('rss channel item');
 			for (const item of items) {
-				console.log('item:', item);
+				// console.log('item:', item);
 				newsitems.push({
 					title: item.querySelector('title')?.innerHTML.replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1'),
 					link: item.querySelector('link')?.innerHTML,

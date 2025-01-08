@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { wmo } from './weather';
+
 	import WindIcon from '$lib/icons/WindIcon.svelte';
 	import WaterIcon from '$lib/icons/WaterIcon.svelte';
 	import GuageIcon from '$lib/icons/GuageIcon.svelte';
 	import SunIcon from '$lib/icons/SunIcon.svelte';
+	import RadarIcon from '$lib/icons/RadarIcon.svelte';
+	import RadarImage from './RadarImage.svelte';
 
 	type MyProp = {
 		weather: string;
@@ -16,6 +19,7 @@
 	// const oneweek = 7 * 24 * 60 * 60 * 1000;
 	const tendays = 10 * 24 * 60 * 60 * 1000;
 
+	let dlgRadar: HTMLDialogElement | undefined = $state();
 	let weather: WeatherData | undefined = $state();
 	// svelte-ignore non_reactive_update
 	let hourlySlider: HTMLElement | undefined = $state();
@@ -57,6 +61,7 @@
 		// https://stackoverflow.com/questions/28576636/mouse-click-and-drag-instead-of-horizontal-scroll-bar-to-view-full-content-of-c
 		// console.log('slider actions activated for non-touch device');
 		slider.addEventListener('mousedown', (e) => {
+			// console.log(e);
 			isDown = true;
 			slider.classList.add('active');
 			startX = e.pageX - slider.offsetLeft;
@@ -71,6 +76,7 @@
 			slider.classList.remove('active');
 		});
 		slider.addEventListener('mousemove', (e) => {
+			// console.log(e);
 			if (!isDown) return;
 			e.preventDefault();
 			const x = e.pageX - slider.offsetLeft;
@@ -249,4 +255,22 @@
 			<a href="https://weather.gc.ca/" target="_blank" class="mx-1 text-info">Environment Canada</a>
 		</div>
 	</div>
+
+	<!-- radar image button -->
+	<div class="absolute right-[20px] top-[80px] z-[10] sm:top-[20px]">
+		<button class="btn btn-circle btn-primary opacity-50" onclick={() => dlgRadar?.showModal()}>
+			<RadarIcon width="1.75rem" height="1.75rem" />
+		</button>
+	</div>
 {/if}
+
+<dialog class="modal" bind:this={dlgRadar}>
+	<div class="modal-box max-w-none p-0">
+		<!-- <h3 class="text-lg font-bold">Hello!</h3>
+		<p class="py-4">Press ESC key or click outside to close</p> -->
+		<RadarImage />
+	</div>
+	<form method="dialog" class="modal-backdrop">
+		<button>close</button>
+	</form>
+</dialog>

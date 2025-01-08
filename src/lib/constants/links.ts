@@ -1,5 +1,5 @@
 
-export const defaultLinks: Record<string, Link[]> = {
+export const defaultLinks: Record<string, WebLink[]> = {
   'Blog / Directory': [
     {
       title: 'Ottawa Start',

@@ -60,13 +60,22 @@ type Timezone = {
   title: string;
 };
 
-type GisLayer = {
-  name: string;
+type GisItem = {
+  name_en: string;
+  name_fr: string;
   url: string;
-  minZoom?: number;
-};
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  layer?: any;
+  popup: MapPopup;
+}
 
-type Link = {
+type MapPopup = {
+  title: string;
+  url?: string;
+  contents: string[];
+}
+
+type WebLink = {
   title: string;
   url: string;
   logo: string;
