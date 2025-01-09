@@ -3,7 +3,7 @@ import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async (event) => {
   const url = event.url.searchParams.get('url');
-  console.log(`url:${url}`);
+  // console.log(`url:${url}`);
   if (url) {
     // To avoid 403 error, needs some headers
     const res = await fetch(url, {

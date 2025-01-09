@@ -42,15 +42,34 @@
 			}
 		}
 	}
+
+	function onClickTransit(e: Event) {
+		if ((e.target as HTMLInputElement).checked) {
+			// console.log('transit layer activated');
+		} else {
+			// console.log('transit layer deactivated');
+		}
+	}
 </script>
 
+<!-- buttons on the top right -->
 <div class="absolute right-[10px] top-[74px] z-[999] flex flex-col gap-2 sm:top-[10px]">
-	<button class="btn btn-sm opacity-70" onclick={() => modalLayerSel?.showModal()}>GIS</button>
-	<button class="btn btn-sm opacity-70">Transit</button>
+	<!-- gis button -->
+	<button class="btn btn-sm opacity-75" onclick={() => modalLayerSel?.showModal()}>GIS</button>
+	<!-- transit radio -->
+	<!-- <input
+		type="checkbox"
+		aria-label="Transit"
+		class="btn btn-sm opacity-75"
+		onchange={onClickTransit}
+	/> -->
+	<a href="https://transit.innomatic.ca" class="btn btn-sm opacity-75" target="_blank">Transit</a>
 </div>
+
+<!-- map -->
 <div id="map"></div>
 
-<!-- GIS layer select -->
+<!-- GIS layer select dialog -->
 <dialog class="modal" bind:this={modalLayerSel}>
 	<div class="modal-box">
 		<!-- <h3 class="text-lg font-bold">Hello!</h3>

@@ -36,7 +36,7 @@
 
 	function playRadio(stationId: string) {
 		const station = radioStations.find((e) => e.stationuuid === stationId);
-		console.log(`station: ${station?.url}, audioElement:${audioElement}`);
+		// console.log(`station: ${station?.url}, audioElement:${audioElement}`);
 		if (station && audioElement) {
 			// create audio context if necessary
 			if (!audioContext) {
@@ -50,7 +50,7 @@
 				// same station selected => return here
 				// if (audioElement.src.split('?url=')[1] === station.url) {
 				if ($playingStationId === station.stationuuid) {
-					console.log(`pause: ${audioElement.src}`);
+					// console.log(`pause: ${audioElement.src}`);
 					playingStationId.set('');
 					return;
 				}
@@ -70,14 +70,14 @@
 					return;
 				}
 				audioElement.play();
-				console.log(`playing: ${station.url}`);
+				// console.log(`playing: ${station.url}`);
 			} else {
 				// MP3 or PLS formats
 				// use proxy
 				// audioElement.src = station.url;
 				audioElement.src = `/api/radio?url=${station.url}`;
 				audioElement.play();
-				console.log(`playing: ${station.url}`);
+				// console.log(`playing: ${station.url}`);
 			}
 			playingStationId.set(station.stationuuid);
 		}

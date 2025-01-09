@@ -6,4 +6,6 @@ html {
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
+  /* https://github.com/saadeghi/daisyui/issues/3040#issuecomment-2474233515 */
+  scrollbar-gutter: auto !important;
 }

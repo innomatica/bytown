@@ -18,7 +18,7 @@ function createSettingsStore() {
 		},
 		save: async (data: Settings) => {
 			await saveSettings(data);
-			console.log('settings.save:', data);
+			// console.log('settings.save:', data);
 			set(data);
 		}
 	};
@@ -69,7 +69,7 @@ function createSnoozeStore() {
 			}),
 		tick: () => {
 			update((v) => {
-				console.log(v.remaining);
+				// console.log(v.remaining);
 				return {
 					start: v.start,
 					duration: v.duration,

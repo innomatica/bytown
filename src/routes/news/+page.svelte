@@ -9,7 +9,7 @@
 		if (checked) {
 			const newsitems: NewsItem[] = [];
 			const res = await fetch(`/api/feed?url=${newsfeed.feed}`);
-			console.log('status:', res.status);
+			// console.log('status:', res.status);
 			const data = await res.text();
 			// console.log('text:', data);
 			const parser = new DOMParser();

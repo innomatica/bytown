@@ -12,7 +12,7 @@
 	<!-- title -->
 	<div class="my-4 text-center">
 		<div class="text-3xl font-bold text-secondary">Bytown</div>
-		<div>One Stop Information Source for Ottawa Vistors</div>
+		<div>for Ottawa Vistors</div>
 	</div>
 
 	<!-- diff image -->
@@ -43,68 +43,66 @@
 	</div>
 	<br />
 
-	<p class="text-success">Bytown brings you</p>
+	<p class="mb-2 text-success">Bytown brings you</p>
 	<ul>
-		<li>Free Internet Radio</li>
-		<li>Daily News Headlines</li>
-		<li>Digital Alarm Clock</li>
-		<li>Weather Forecast</li>
-		<li>Map (transit info and tourist attractions)</li>
-		<li>Links to Event Calendars and Other Informations</li>
+		<li>Internet radio</li>
+		<li>Daily news headlines</li>
+		<li>Alarm clock with dual timezones</li>
+		<li>Weather forecast</li>
+		<li>City of Ottawa GIS data on map</li>
+		<li>Other useful links during your visit</li>
 	</ul>
 	<br />
 
+	<p>This site does not collect any user information whatsoever. It is even cookie-free.</p>
 	<p>
-		Unique design makes it fit nicely on your smartphones or tablets, particulary in the landscape
-		mode. If you like this site, please <button onclick={showQrCode} class="text-info"
+		If you like this site, please <button onclick={showQrCode} class="text-info"
 			>share with others.</button
 		>
 	</p>
 	<br />
 
-	<div class="font-medium text-success">Attributions</div>
+	<div class="mb-2 font-medium text-success">Attributions</div>
 	<ul>
+		<li>Radio Stations: Radio Stations around Ottawa</li>
+		<li>News: News Outlets around Ottawa</li>
 		<li>
-			Radio Stations: <a href="https://www.radio-browser.info/">RadioBrowser</a>
-		</li>
-		<li>
-			News: <a href="https://ottawa.ctvnews.ca/" target="_blank">CTV News Ottawa</a> RSS feed
-		</li>
-		<li>
-			Weather: <a href="https://open.canada.ca/en/open-data" target="_blank">Environment Canada</a> Open
-			Data
+			Weather: <a class="text-info" href="https://open.canada.ca/en/open-data" target="_blank"
+				>Environment Canada</a
+			>
 		</li>
 		<li>
 			GIS Data: <a
+				class="text-info"
 				href="https://ottawa.ca/en/city-hall/open-transparent-and-accountable-government/open-data"
 				target="_blank">City of Ottawa</a
 			>
-			and
-			<a
-				href="https://www.arcgis.com/home/item.html?id=cdb843a5dbf74467a511076328ca2463"
-				target="_blank">NCC</a
-			>
 		</li>
 		<li>
-			Parliament and Person Icons: created by <a
+			Parliament Icons: created by <a
+				class="text-info"
 				href="https://www.flaticon.com/free-icons/parliament"
 				title="parliament icons">Freepik - Flaticon</a
 			>
 		</li>
 		<li>
-			Other Icons: <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>
+			Other Icons: <a class="text-info" href="https://fontawesome.com/" target="_blank"
+				>Font Awesome</a
+			>
 		</li>
 	</ul>
 	<br />
 
-	<div class="font-medium text-success">Disclaimer</div>
-	<p class="text-sm">
-		To the best knowledge of the developer, all information in this site belong to the public
-		domain. If you have any concern about the copyright of the material, please feel free to
+	<div class="mb-2 text-sm font-medium text-success">Disclaimer</div>
+	<p class="text-xs font-light">
+		To the best knowledge of the developer, all data in this site belong to the public domain.
+	</p>
+	<p class="text-xs font-light">
+		If you have any concern about the copyright of the material, please feel free to
 		<a href="mailto:info@innomatic.ca" class="text-info">contact us.</a>
 	</p>
 
-	<div class="mt-6">
+	<!-- <div class="mt-6">
 		<a href="https://www.buymeacoffee.com/infoRr" target="_blank">
 			<img
 				src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
@@ -112,13 +110,13 @@
 				width="140"
 			/>
 		</a>
-	</div>
+	</div> -->
 
 	<dialog bind:this={qrcode} class="modal">
-		<div class="modal-box">
+		<div class="modal-box w-fit">
 			<div class="flex flex-col items-center">
-				<img src="/images/qrcode.png" alt="" />
-				<p class="mt-1">https://bytown.innomatic.ca</p>
+				<img class="rounded-md" src="/images/qrcode.png" alt="" />
+				<p class="mt-2">https://bytown.innomatic.ca</p>
 			</div>
 		</div>
 		<form method="dialog" class="modal-backdrop">
