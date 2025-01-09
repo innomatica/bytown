@@ -2,7 +2,7 @@ type RadioStation = {
   stationuuid: string;
   name: string;
   url: string;
-  url_resolved?: string;
+  url_resolved: string;
   homepage?: string;
   favicon?: string;
   tags?: string;

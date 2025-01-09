@@ -74,8 +74,8 @@
 			} else {
 				// MP3 or PLS formats
 				// use proxy
-				// audioElement.src = station.url;
-				audioElement.src = `/api/radio?url=${station.url}`;
+				audioElement.src = station.url_resolved;
+				// audioElement.src = `/api/radio?url=${station.url}`;
 				audioElement.play();
 				// console.log(`playing: ${station.url}`);
 			}
