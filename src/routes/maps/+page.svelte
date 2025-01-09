@@ -21,6 +21,12 @@
 		}).addTo(map);
 		// sort layers
 		gisItems = gisItemsOttawa.sort((a, b) => a.name_en.localeCompare(b.name_en));
+		// replace default marker -> NOT WORKING
+		// L.Icon.Default.prototype.options = {
+		// 	iconUrl: '/leaflet/marker-icon.png',
+		// 	iconRetinaUrl: '/leaflet/marker-icon-2x.png',
+		// 	shadowUrl: '/leaflet/marker.shadow.png'
+		// };
 	});
 
 	onDestroy(() => map?.remove());
@@ -43,13 +49,13 @@
 		}
 	}
 
-	function onClickTransit(e: Event) {
-		if ((e.target as HTMLInputElement).checked) {
-			// console.log('transit layer activated');
-		} else {
-			// console.log('transit layer deactivated');
-		}
-	}
+	// function onClickTransit(e: Event) {
+	// 	if ((e.target as HTMLInputElement).checked) {
+	// 		// console.log('transit layer activated');
+	// 	} else {
+	// 		// console.log('transit layer deactivated');
+	// 	}
+	// }
 </script>
 
 <!-- buttons on the top right -->

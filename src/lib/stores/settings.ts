@@ -32,7 +32,8 @@ export const settings = createSettingsStore();
 function createSnoozeStore() {
 	const { subscribe, set, update } = writable<Snooze>({ remaining: 0, duration: 0 });
 	const durations = [60, 30, 15, 10, 5, 1, 0];
-	let interval = 0;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	let interval: any;
 	return {
 		subscribe, set, update,
 		next: (callback: () => void) =>
