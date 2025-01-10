@@ -11,8 +11,8 @@
 <article>
 	<!-- title -->
 	<div class="my-4 text-center">
-		<div class="text-3xl font-bold text-secondary">Bytown</div>
-		<div>for Ottawa Vistors</div>
+		<div class="text-5xl font-black text-primary">Bytown</div>
+		<div class="my-8 mt-4 text-lg font-light">Information for Ottawa Vistors and Newcomers</div>
 	</div>
 
 	<!-- diff image -->
@@ -26,11 +26,11 @@
 		<div class="diff-resizer"></div>
 	</div>
 
-	<div class="text-center">
+	<div class="mt-2 text-center">
 		<a
 			href="https://commons.wikimedia.org/w/index.php?curid=5769878"
 			target="_blank"
-			class="my-0 text-[0.38rem] text-slate-500 md:text-sm"
+			class="my-0 text-sm opacity-50 md:text-sm"
 		>
 			<div>
 				Thomas Burrowes: First Eight Locks of the Rideau Canal, the North entrance from the Ottawa
@@ -43,7 +43,7 @@
 	</div>
 	<br />
 
-	<p class="mb-2 text-success">Bytown brings you</p>
+	<p class="my-2 font-semibold text-success">Bytown brings you</p>
 	<ul>
 		<li>Internet radio</li>
 		<li>Daily news headlines</li>
@@ -54,15 +54,13 @@
 	</ul>
 	<br />
 
-	<p>This site does not collect any user information whatsoever. It is even cookie-free.</p>
 	<p>
-		If you like this site, please <button onclick={showQrCode} class="text-info"
-			>share with others.</button
-		>
+		This site does not collect any user information whatsoever. It is even cookie-free. If you like
+		this site, please <button onclick={showQrCode} class="text-info">share with others.</button>
 	</p>
 	<br />
 
-	<div class="mb-2 font-medium text-success">Attributions</div>
+	<div class="my-2 font-semibold text-success">Attributions</div>
 	<ul>
 		<li>Radio Stations: Radio Stations around Ottawa</li>
 		<li>News: News Outlets around Ottawa</li>
@@ -93,12 +91,10 @@
 	</ul>
 	<br />
 
-	<div class="mb-2 text-sm font-medium text-success">Disclaimer</div>
+	<div class="mb-2 text-sm text-success">Disclaimer</div>
 	<p class="text-xs font-light">
-		To the best knowledge of the developer, all data in this site belong to the public domain.
-	</p>
-	<p class="text-xs font-light">
-		If you have any concern about the copyright of the material, please feel free to
+		To the best knowledge of the developer, all data in this site belong to the public domain. If
+		you have any concern about the copyright of the material, please feel free to
 		<a href="mailto:info@innomatic.ca" class="text-info">contact us.</a>
 	</p>
 
