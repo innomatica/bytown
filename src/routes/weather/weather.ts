@@ -1,4 +1,4 @@
-export function wmo(weatherCode: number, day: boolean = true) {
+export function wmo(weatherCode: number, day: number = 1) {
   switch (weatherCode) {
     case 0:
       return day

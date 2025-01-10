@@ -88,23 +88,23 @@
 </script>
 
 {#if weather}
-	<div class="my-6 flex flex-col items-center gap-8">
+	<div class="my-6 flex flex-col items-center gap-6">
 		<!-- 
       current condition 
     -->
 		<div class="items.center flex flex-col items-center">
 			<div class="text-xl font-semibold">
 				<!-- weather description -->
-				{wmo(weather.current.weatherCode).text}
+				{wmo(weather.current.weatherCode, weather.current.isDay).text}
 			</div>
-			<div class="flex items-center gap-4">
+			<div class="flex items-center gap-2">
 				<!-- current temperature -->
 				<div class="text-[5rem] font-extrabold">
 					{Math.round(weather.current.temperature2m)}
 				</div>
 				<img
 					class="h-[100px] w-[128px]"
-					src={wmo(weather.current.weatherCode).icon}
+					src={wmo(weather.current.weatherCode, weather.current.isDay).icon}
 					alt="weather"
 				/>
 				<div class="flex flex-col items-center gap-2 text-sm">
@@ -147,7 +147,7 @@
 							<!-- icon -->
 							<img
 								class="my-2 h-10 w-10"
-								src={wmo(weather.hourly.weatherCode[index]).icon}
+								src={wmo(weather.hourly.weatherCode[index], weather.hourly.isDay[index]).icon}
 								alt="weather"
 							/>
 							<!-- preciptation probability -->
