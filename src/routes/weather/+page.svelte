@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { wmo } from './weather';
+	import type { WeatherData } from '../../ambient';
 
 	import WindIcon from '$lib/icons/WindIcon.svelte';
 	import WaterIcon from '$lib/icons/WaterIcon.svelte';
@@ -21,6 +22,7 @@
 
 	let dlgRadar: HTMLDialogElement | undefined = $state();
 	let weather: WeatherData | undefined = $state();
+	/* eslint svelte/no-unused-svelte-ignore: "off" */
 	// svelte-ignore non_reactive_update
 	let hourlySlider: HTMLElement | undefined = $state();
 	// svelte-ignore non_reactive_update
@@ -39,7 +41,7 @@
 			return value;
 		};
 		weather = JSON.parse(data.weather, dateTimeReviver);
-		// console.log(weather);
+		console.log(weather);
 	});
 
 	$effect(() => {
@@ -89,8 +91,8 @@
 
 {#if weather}
 	<div class="my-6 flex flex-col items-center gap-6">
-		<!-- 
-      current condition 
+		<!--
+      current condition
     -->
 		<div class="items.center flex flex-col items-center">
 			<div class="text-xl font-semibold">
@@ -120,8 +122,8 @@
 				Feels like {Math.round(weather.current.apparentTemperature)}
 			</div>
 		</div>
-		<!-- 
-      hourly forecast 
+		<!--
+      hourly forecast
     -->
 		<div class="flex flex-col items-center rounded-box bg-neutral p-4">
 			<!-- <div class="mb-4 font-semibold">Hourly</div> -->
@@ -163,8 +165,8 @@
 				{/each}
 			</div>
 		</div>
-		<!-- 
-      daily forecast 
+		<!--
+      daily forecast
     -->
 		<div class="flex flex-col items-center rounded-box bg-neutral p-4">
 			<!-- <div class="mb-4 font-semibold">Daily</div> -->

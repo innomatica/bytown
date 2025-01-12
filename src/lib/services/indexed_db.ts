@@ -1,6 +1,7 @@
 import { browser } from '$app/environment';
 import { openDB, type IDBPDatabase } from 'idb';
 import { defaultSettings } from '$lib/constants/defaults';
+import type { Settings } from '../../ambient';
 
 export async function getDatabase(): Promise<IDBPDatabase<void>> {
 	return await openDB('kanto', 2, {

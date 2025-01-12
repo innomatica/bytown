@@ -1,4 +1,5 @@
 import { writable, type Writable } from 'svelte/store';
+import type { RadioStation } from '../../ambient';
 
 export type AudioPlayer = {
 	player: HTMLAudioElement | null;

@@ -2,6 +2,7 @@
 	import { radioStations } from '$lib/constants/stations';
 	import { getContext, onMount } from 'svelte';
 	import { playingStationId } from '$lib/stores/station';
+	import type { RadioStation } from '../../ambient';
 
 	let playRadio: (staitonId: string) => void;
 	let stations: RadioStation[] = $state([]);

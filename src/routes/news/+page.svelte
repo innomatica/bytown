@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { newsfeeds } from '$lib/constants/newsfeeds';
+	import type { Newsfeed, NewsItem } from '../../ambient';
 
 	const myNewsfeeds: Newsfeed[] = $state(newsfeeds);
 	const contentStyle = '<style> .noimage > img { display: none;} </style>';

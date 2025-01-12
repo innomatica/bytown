@@ -4,6 +4,7 @@
 	import { featureLayer } from 'esri-leaflet';
 
 	import { defaultLocation, defaultZoom } from '$lib/constants/defaults';
+	import type { GisItem } from '../../ambient';
 
 	import { buildPopUp } from './helpers';
 	import { gisItemsOttawa } from '$lib/constants/gisitems';

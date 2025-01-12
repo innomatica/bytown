@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { radio } from '$lib/stores/radio';
+	import type { RadioStation } from '../../ambient';
 
 	// export let station: RadioStation;
 	// $: if ($radio.currentStation === station.stationuuid) {

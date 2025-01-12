@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store';
 import { defaultSettings } from '$lib/constants/defaults';
 import { loadSettings, saveSettings } from '$lib/services/indexed_db';
+import type { Settings, Snooze } from '../../ambient';
 
 //
 // settings
@@ -35,13 +36,14 @@ function createSnoozeStore() {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let interval: any;
 	return {
-		subscribe, set, update,
+		subscribe,
+		set,
+		update,
 		next: (callback: () => void) =>
 			update((v) => {
 				// select next duration from durations
-				const nextDuration = durations[
-					(durations.findIndex((e) => e === v.duration) + 1) % durations.length
-				]
+				const nextDuration =
+					durations[(durations.findIndex((e) => e === v.duration) + 1) % durations.length];
 				// set up interval timer
 				if (interval) {
 					clearInterval(interval);
@@ -59,14 +61,14 @@ function createSnoozeStore() {
 							start: v.start,
 							duration: v.duration,
 							remaining
-						}
+						};
 					});
 				}, 1000);
 				return {
 					start: new Date(),
 					duration: nextDuration,
-					remaining: nextDuration * 60,
-				}
+					remaining: nextDuration * 60
+				};
 			}),
 		tick: () => {
 			update((v) => {
@@ -74,11 +76,11 @@ function createSnoozeStore() {
 				return {
 					start: v.start,
 					duration: v.duration,
-					remaining: v.remaining - 1,
-				}
+					remaining: v.remaining - 1
+				};
 			});
 		}
-	}
+	};
 }
 
 export const snooze = createSnoozeStore();
