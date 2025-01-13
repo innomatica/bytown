@@ -91,24 +91,25 @@
 
 {#if weather}
 	<div class="my-6 flex flex-col items-center gap-6">
-		<!--
-      current condition
-    -->
+		<!-- current condition -->
 		<div class="items.center flex flex-col items-center">
+			<!-- weather description -->
 			<div class="text-xl font-semibold">
-				<!-- weather description -->
 				{wmo(weather.current.weatherCode, weather.current.isDay).text}
 			</div>
+			<!-- temperature / icon / today max min -->
 			<div class="flex items-center gap-2">
 				<!-- current temperature -->
 				<div class="text-[5rem] font-extrabold">
 					{Math.round(weather.current.temperature2m)}
 				</div>
+				<!-- weather icon -->
 				<img
 					class="h-[100px] w-[128px]"
 					src={wmo(weather.current.weatherCode, weather.current.isDay).icon}
 					alt="weather"
 				/>
+				<!-- today max / min -->
 				<div class="flex flex-col items-center gap-2 text-sm">
 					<div>
 						High {Math.round(weather.daily.temperature2mMax[0])}
@@ -118,13 +119,12 @@
 					</div>
 				</div>
 			</div>
+			<!-- temperature feels like -->
 			<div class="text-lg text-secondary">
 				Feels like {Math.round(weather.current.apparentTemperature)}
 			</div>
 		</div>
-		<!--
-      hourly forecast
-    -->
+		<!-- hourly forecast -->
 		<div class="flex flex-col items-center rounded-box bg-neutral p-4">
 			<!-- <div class="mb-4 font-semibold">Hourly</div> -->
 			<div
@@ -157,17 +157,23 @@
 								{Math.round(weather.hourly.precipitationProbability[index])} %
 							</div>
 							<!-- preciptation sum -->
-							<div class="text-primary">
-								{Math.round(weather.hourly.precipitation[index])} mm
-							</div>
+							{#if weather.hourly.snowfall[index]}
+								<div class="text-error">
+									<!-- snowfall sum -->
+									{Math.round(weather.hourly.snowfall[index])} cm
+								</div>
+							{:else if weather.hourly.rain[index]}
+								<div class="text-warn">
+									<!-- rain sum -->
+									{Math.round(weather.hourly.rain[index])} mm
+								</div>
+							{/if}
 						</div>
 					{/if}
 				{/each}
 			</div>
 		</div>
-		<!--
-      daily forecast
-    -->
+		<!-- daily forecast -->
 		<div class="flex flex-col items-center rounded-box bg-neutral p-4">
 			<!-- <div class="mb-4 font-semibold">Daily</div> -->
 			<div
@@ -176,7 +182,7 @@
 			>
 				{#each weather.daily.time as time, index}
 					<!-- show next 10 days -->
-					{#if time >= now && time.getTime() < now.getTime() + tendays}
+					{#if time.getDate() >= now.getDate() && time.getDate() < now.getDate() + 10}
 						<div class="carousel-item flex flex-col items-center">
 							<!-- day -->
 							<div class="my-4 font-semibold">
@@ -201,14 +207,22 @@
 								src={wmo(weather.daily.weatherCode[index]).icon}
 								alt="weather"
 							/>
-							<!-- preciptation probability -->
+							<!-- precipitation probability -->
 							<div class="text-primary">
 								{Math.round(weather.daily.precipitationProbabilityMax[index])} %
 							</div>
-							<!-- preciptation sum -->
-							<div class="text-primary">
-								{Math.round(weather.daily.precipitationSum[index])} mm
-							</div>
+							<!-- precipitation -->
+							{#if weather.daily.snowfallSum[index]}
+								<div class="text-error">
+									<!-- snowfall sum -->
+									{Math.round(weather.daily.snowfallSum[index])} cm
+								</div>
+							{:else if weather.daily.rainSum[index]}
+								<div class="text-warn">
+									<!-- rain sum -->
+									{Math.round(weather.daily.rainSum[index])} mm
+								</div>
+							{/if}
 						</div>
 					{/if}
 				{/each}
